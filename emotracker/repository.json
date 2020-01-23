@@ -7,6 +7,7 @@
       "flags": [
         "map",
         "pins",
+        "chathud",
         "autotracker"
       ],
       "game_name": "Super Metroid + LTTP Randomizer",
@@ -16,11 +17,11 @@
       "variants": [
         {
           "name": "Standard Tracker",
-          "flags": [ "map", "pins", "autotracker" ]
+          "flags": [ "map", "pins", "chathud", "autotracker" ]
         },
         {
           "name": "Bizhawk Autotracker",
-          "flags": [ "map", "pins", "autotracker" ]
+          "flags": [ "map", "pins", "chathud", "autotracker" ]
         }
       ]
     }
