@@ -24,6 +24,20 @@
           "flags": [ "map", "pins", "chathud", "autotracker" ]
         }
       ]
+    },
+    {
+      "author": "Dorkmaster Flek",
+      "name": "Super Metroid DASH Randomizer Map Tracker",
+      "flags": [
+        "map",
+        "pins",
+        "chathud",
+        "autotracker"
+      ],
+      "game_name": "Super Metroid Randomizer",
+      "version": "1.0.0",
+      "uid": "smdash_dorkmasterflek",
+      "link": "https://dorkmasterflek.github.io/emotracker/smdash_dorkmasterflek.zip"
     }
   ]
 }
