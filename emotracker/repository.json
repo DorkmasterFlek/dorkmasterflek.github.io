@@ -16,7 +16,7 @@
       "link": "https://dorkmasterflek.github.io/emotracker/smalttprando_gilgatex.zip",
       "variants": [
         {
-          "name": "Standard Tracker",
+          "name": "Standard Autotracker",
           "flags": [ "map", "pins", "chathud", "autotracker" ]
         },
         {
