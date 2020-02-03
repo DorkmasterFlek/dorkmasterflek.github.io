@@ -11,7 +11,7 @@
         "autotracker"
       ],
       "game_name": "Super Metroid + LTTP Randomizer",
-      "version": "3.1.6",
+      "version": "3.1.7",
       "uid": "smalttprando_gilgatex",
       "link": "https://dorkmasterflek.github.io/emotracker/smalttprando_gilgatex.zip",
       "variants": [
@@ -35,7 +35,7 @@
         "autotracker"
       ],
       "game_name": "Super Metroid Randomizer",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "uid": "smdash_dorkmasterflek",
       "link": "https://dorkmasterflek.github.io/emotracker/smdash_dorkmasterflek.zip"
     }
