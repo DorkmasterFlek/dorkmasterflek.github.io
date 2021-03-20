@@ -11,7 +11,7 @@
         "autotracker"
       ],
       "game_name": "Super Metroid + LTTP Randomizer",
-      "version": "3.4.12",
+      "version": "3.5.0",
       "uid": "smalttprando_gilgatex",
       "link": "https://dorkmasterflek.github.io/emotracker/smalttprando_gilgatex.zip",
       "variants": [
@@ -20,7 +20,7 @@
           "flags": [ "map", "pins", "chathud", "autotracker" ]
         },
         {
-          "name": "Keysanity *ALPHA*",
+          "name": "Keysanity",
           "flags": [ "map", "pins", "chathud", "autotracker" ]
         },
         {
@@ -28,7 +28,7 @@
           "flags": [ "map", "pins", "chathud", "autotracker" ]
         },
         {
-          "name": "Bizhawk Keysanity *ALPHA*",
+          "name": "Bizhawk Keysanity",
           "flags": [ "map", "pins", "chathud", "autotracker" ]
         }
       ]
