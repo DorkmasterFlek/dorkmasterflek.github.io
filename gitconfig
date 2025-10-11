@@ -1,0 +1,8 @@
+[user]
+	email = dorkmasterflek@gmail.com
+	name = DorkmasterFlek
+[core]
+	excludesfile = /home/andrew/.gitignore_global
+[push]
+	default = current
+	autoSetupRemote = true
