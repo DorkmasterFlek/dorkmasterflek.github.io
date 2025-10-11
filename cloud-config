@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# ******** Initial user setup
+set -euo pipefail
+
+USERNAME=dorkmasterflek # Customize the non-root username here
+
+# Create user and immediately expire password to force a change on login
+useradd --create-home --shell "/bin/bash" --groups sudo "${USERNAME}"
+passwd --delete "${USERNAME}"
+chage --lastday 0 "${USERNAME}"
+
+# Enable "lingering" so rootless docker will keep running.
+loginctl enable-linger "${USERNAME}"
+
+# Create SSH directory for user and move keys over
+home_directory="$(eval echo ~${USERNAME})"
+mkdir --parents "${home_directory}/.ssh"
+mv /root/.ssh/authorized_keys "${home_directory}/.ssh"
+chmod 0700 "${home_directory}/.ssh"
+chmod 0600 "${home_directory}/.ssh/authorized_keys"
+chown --recursive "${USERNAME}":"${USERNAME}" "${home_directory}/.ssh"
+
+# Disable root SSH login with password
+sed --in-place 's/^PermitRootLogin.*/PermitRootLogin prohibit-password/g' /etc/ssh/sshd_config
+if sshd -t -q; then systemctl restart sshd; fi
+
+# Allow non-root users to bind to priviledged ports to run Docker in rootless mode.
+echo "net.ipv4.ip_unprivileged_port_start=80" >> /etc/sysctl.d/10-network-security.conf
+
+# ******** Install Docker in rootless mode
+
+# Add Docker's official GPG key:
+apt-get update
+apt-get install -y ca-certificates curl uidmap
+install -m 0755 -d /etc/apt/keyrings
+curl -fsL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt-get update
+
+# Install packages.
+apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Disable normal mode to install rootless later.
+systemctl disable --now docker.service docker.socket
+rm /var/run/docker.sock
+
+# ******** Extra user setup for myself.
+
+sudo -u "${USERNAME}" curl -fsL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o "${home_directory}/.git-prompt.sh"
+sudo -u "${USERNAME}" curl -fsL https://raw.githubusercontent.com/DorkmasterFlek/dorkmasterflek.github.io/master/bashrc_extra >> "${home_directory}/.bashrc"
