@@ -25,6 +25,11 @@ sudo rm /var/run/docker.sock
 
 dockerd-rootless-setuptool.sh install
 
+# ******** Install Flatpak
+
+sudo apt-get install flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 # ******** Extra user setup for myself.
 
 curl -fsL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
