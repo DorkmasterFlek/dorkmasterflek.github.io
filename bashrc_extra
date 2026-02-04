@@ -16,3 +16,4 @@ export DOCKER_HOST="unix:///run/user/1000/docker.sock"
 
 # Aliases
 alias aptupgrade="sudo apt update; sudo apt full-upgrade; sudo apt autoremove; sudo apt autoclean; sudo snap refresh; flatpak update;"
+alias dorkmasterflek='ssh dorkmasterflek@dorkmasterflek.com'
