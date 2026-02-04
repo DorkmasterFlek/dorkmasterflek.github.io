@@ -27,7 +27,7 @@ dockerd-rootless-setuptool.sh install
 
 # ******** Install Flatpak
 
-sudo apt-get install flatpak
+sudo apt-get install -y flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # ******** Extra user setup for myself.
