@@ -55,3 +55,5 @@ rm /var/run/docker.sock
 
 sudo -u "${USERNAME}" curl -fsL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o "${home_directory}/.git-prompt.sh"
 sudo -u "${USERNAME}" curl -fsL https://raw.githubusercontent.com/DorkmasterFlek/dorkmasterflek.github.io/master/bashrc_extra >> "${home_directory}/.bashrc"
+sudo -u "${USERNAME}" curl -fsL https://raw.githubusercontent.com/DorkmasterFlek/dorkmasterflek.github.io/master/gitignore_global -o "${home_directory}/.gitignore_global"
+sudo -u "${USERNAME}" curl -fsL https://raw.githubusercontent.com/DorkmasterFlek/dorkmasterflek.github.io/master/gitconfig -o "${home_directory}/.gitconfig"
