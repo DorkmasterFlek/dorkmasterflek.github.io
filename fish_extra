@@ -1,0 +1,9 @@
+# Add groups to ls aliases.
+alias ls='eza -gal --color=always --group-directories-first --icons' # preferred listing
+alias la='eza -ga --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='eza -gl --color=always --group-directories-first --icons'  # long format
+alias lt='eza -gaT --color=always --group-directories-first --icons' # tree listing
+alias l.="eza -ga | grep -e '^\.'"                                     # show only dotfiles
+
+# My extras.
+alias dorkmasterflek='ssh dorkmasterflek@dorkmasterflek.com'
