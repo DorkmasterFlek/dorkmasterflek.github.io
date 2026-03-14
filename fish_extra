@@ -6,5 +6,8 @@ alias ll='eza -gl --color=always --group-directories-first --icons'  # long form
 alias lt='eza -gaT --color=always --group-directories-first --icons' # tree listing
 alias l.="eza -ga | grep -e '^\.'"                                     # show only dotfiles
 
+# Crontab editor
+EDITOR=nano
+
 # My extras.
 alias dorkmasterflek='ssh dorkmasterflek@dorkmasterflek.com'
