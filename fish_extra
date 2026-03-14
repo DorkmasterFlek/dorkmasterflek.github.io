@@ -1,3 +1,4 @@
+
 # Add groups to ls aliases.
 alias ls='eza -gal --color=always --group-directories-first --icons' # preferred listing
 alias la='eza -ga --color=always --group-directories-first --icons'  # all files and dirs
