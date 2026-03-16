@@ -7,8 +7,8 @@ alias lt='eza -gaT --color=always --group-directories-first --icons' # tree list
 alias l.="eza -ga | grep -e '^\.'"                                     # show only dotfiles
 
 # Crontab editor
-set EDITOR nano
-set VISUAL $EDITOR
+export EDITOR=nano
+export VISUAL=$EDITOR
 
 # My extras.
 alias dorkmasterflek='ssh dorkmasterflek@dorkmasterflek.com'
