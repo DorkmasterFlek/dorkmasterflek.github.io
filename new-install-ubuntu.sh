@@ -19,11 +19,8 @@ sudo apt-get update
 # Install packages.
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Disable normal mode and install rootless.
-sudo systemctl disable --now docker.service docker.socket
-sudo rm /var/run/docker.sock
-
-dockerd-rootless-setuptool.sh install
+# Add myself to the docker group to run things.
+sudo usermod -aG docker $USER
 
 # ******** Install Flatpak
 
