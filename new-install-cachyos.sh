@@ -2,7 +2,7 @@
 
 # ******** Install Docker
 
-paru -S docker docker-compose
+paru -S --noconfirm docker docker-compose
 
 # Add myself to the docker group to run things.
 sudo usermod -aG docker $USER
