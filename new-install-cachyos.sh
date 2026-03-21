@@ -1,5 +1,12 @@
 #!/bin/fish
 
+# ******** Install Docker
+
+paru -S docker docker-compose
+
+# Add myself to the docker group to run things.
+sudo usermod -aG docker $USER
+
 # ******** Extra user setup for myself.
 
 curl -fsL https://raw.githubusercontent.com/DorkmasterFlek/dorkmasterflek.github.io/master/fish_extra >> ~/.config/fish/config.fish
