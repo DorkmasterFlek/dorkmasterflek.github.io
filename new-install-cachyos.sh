@@ -3,6 +3,8 @@
 # ******** Install Docker
 
 paru -S --noconfirm docker docker-compose
+sudo systemctl enable --now docker.service
+sudo systemctl enable --now docker.socket
 
 # Add myself to the docker group to run things.
 sudo usermod -aG docker $USER
